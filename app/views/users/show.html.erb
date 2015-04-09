@@ -1,0 +1,7 @@
+<div class="media-body">
+  <h2 class="media-heading"><%= @user.name %></h2>
+</div>
+<div class="media-body">
+  <%= render partial: "items/item", collection: @items %>
+  <%= render partial: "items/form" %>
+</div>
