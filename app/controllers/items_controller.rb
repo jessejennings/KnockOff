@@ -12,4 +12,20 @@ class ItemsController < ApplicationController
         flash[:error] = "Look out Beavis!"
       end
   end
+
+  def destroy
+   @item = Item.find(params[:id])
+      if @item.destroy
+       flash[:notice] = "Done Deal!" 
+      else
+        flash[:error] = "No Way Jose"  
+      end
+
+
+
+      respond_to do |format|
+        format.html {redirect_to current_user}
+        format.js 
+      end
+  end
 end

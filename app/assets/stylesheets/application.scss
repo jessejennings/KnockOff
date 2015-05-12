@@ -12,8 +12,7 @@
  *
  *= require_tree .
  *= require_self
- @import "bootstrap-sprockets";
- @import "bootstrap";
+
 
  .user-info {
   margin-top: 9px;
@@ -23,3 +22,5 @@
   margin-top: 5px;
 }
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";

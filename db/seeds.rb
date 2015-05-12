@@ -1,21 +1,22 @@
 require 'faker'
 
-
-50.times do
-  .create!(
-    title: Faker::Lorem.sentence,
+3.times do
+  user = User.new(
+    name: Faker::Name.name, 
+    email: Faker::Internet.email, 
+    password: Faker::Lorem.characters(10)
   )
+  user.skip_confirmation!
+  user.save
 end
-posts = Post.all
 
+users = User.all 
 
-50.times do 
-  Comments.create!(
-    title: Faker::Lorem.sentence,
-  )  
+10.times do
+  Item.create(name: Faker::Lorem.sentence, user: users.sample)
 end
-items = Comment.all
 
-puts "Seed Finished"
-puts "#{Post.count} posts created"
-puts "#{Comments.count} comments created"
+items = Item.all
+
+puts "#{users.count} users created"
+puts "#{items.count} items created"
