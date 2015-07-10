@@ -1,7 +1,8 @@
 <%= form_for Item.new do |f| %>
   <div class= "form-group">
     <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control', placeholder: 'Enter item' %>
+    <br>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Enter task' %>
     <br>
     <%= f.submit "CREATE", class: "btn btn-success"%>
   </div>
